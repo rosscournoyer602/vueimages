@@ -1,7 +1,9 @@
 <template>
   <div>
     <AppHeader />
-    <router-view></router-view>
+    <div class="ui container">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -14,3 +16,8 @@ import AppHeader from './components/AppHeader';
     }
 };
 </script>
+
+<style scoped>
+  
+</style>
+

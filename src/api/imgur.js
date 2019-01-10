@@ -21,5 +21,17 @@ export default {
       }
     }
     return axios(config);
+  },
+  uploadImages(imageList, token) {
+    const imageRequests = Array.from(imageList).map(image => {
+      const formData = new FormData();
+      formData.append('image', image);
+      return axios.post(`${ROOT_URL}/3/image`, formData, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+    });
+    return Promise.all(imageRequests);
   }
 };
